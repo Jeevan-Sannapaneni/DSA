@@ -1,6 +1,5 @@
 """
 Problem 003: Move Zeros To End
-
 Difficulty: Easy
 
 Problem Statement:
