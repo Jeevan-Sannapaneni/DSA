@@ -1,0 +1,34 @@
+"""
+Problem 006: Remove Duplicates From Sorted Array
+
+Difficulty: Easy
+
+Problem Statement:
+Given a sorted array, remove duplicate elements in-place and
+print the array containing only unique elements.
+
+Input:
+N
+A1 A2 ... AN
+
+Output:
+Array after removing duplicates.
+
+Time Complexity: O(N)
+Space Complexity: O(1)
+"""
+
+n = int(input())
+arr = list(map(int, input().split()))
+
+if n == 0:
+    print()
+else:
+    index = 1
+
+    for i in range(1, n):
+        if arr[i] != arr[index - 1]:
+            arr[index] = arr[i]
+            index += 1
+
+    print(*arr[:index])
