@@ -1,0 +1,30 @@
+"""
+Problem 007: Left Rotate Array By One
+
+Difficulty: Easy
+
+Problem Statement:
+Given an array, rotate it to the left by one position.
+
+Input:
+N
+A1 A2 ... AN
+
+Output:
+Rotated array.
+
+Time Complexity: O(N)
+Space Complexity: O(1)
+"""
+
+n = int(input())
+arr = list(map(int, input().split()))
+
+first = arr[0]
+
+for i in range(n - 1):
+    arr[i] = arr[i + 1]
+
+arr[-1] = first
+
+print(*arr)
