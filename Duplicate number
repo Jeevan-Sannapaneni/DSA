@@ -1,0 +1,31 @@
+"""
+Problem 010: Find Duplicate Element
+
+Difficulty: Easy
+
+Problem Statement:
+Given an array containing integers from 1 to N-1,
+exactly one number appears twice.
+Find that duplicate number.
+
+Input:
+N
+Array
+
+Output:
+Duplicate element
+
+Time Complexity: O(N)
+Space Complexity: O(N)
+"""
+
+n = int(input())
+arr = list(map(int, input().split()))
+
+seen = set()
+
+for num in arr:
+    if num in seen:
+        print(num)
+        break
+    seen.add(num)
