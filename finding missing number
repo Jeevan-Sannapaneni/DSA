@@ -1,0 +1,27 @@
+"""
+Problem 009: Find Missing Number
+
+Difficulty: Easy
+
+Problem Statement:
+Given an array containing N-1 distinct numbers from 1 to N,
+find the missing number.
+
+Input:
+N
+Array of N-1 integers
+
+Output:
+Missing number
+
+Time Complexity: O(N)
+Space Complexity: O(1)
+"""
+
+n = int(input())
+arr = list(map(int, input().split()))
+
+expected = n * (n + 1) // 2
+actual = sum(arr)
+
+print(expected - actual)
