@@ -1,0 +1,32 @@
+"""
+Problem 013: Best Time to Buy and Sell Stock
+
+Difficulty: Easy
+
+Problem Statement:
+Given the daily stock prices,
+find the maximum profit that can be achieved
+by buying once and selling once.
+
+Input:
+N
+Prices
+
+Output:
+Maximum profit.
+
+Time Complexity: O(N)
+Space Complexity: O(1)
+"""
+
+n = int(input())
+prices = list(map(int, input().split()))
+
+min_price = prices[0]
+max_profit = 0
+
+for price in prices[1:]:
+    max_profit = max(max_profit, price - min_price)
+    min_price = min(min_price, price)
+
+print(max_profit)
