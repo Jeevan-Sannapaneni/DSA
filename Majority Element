@@ -1,0 +1,38 @@
+"""
+Problem 014: Majority Element
+
+Difficulty: Easy
+
+Problem Statement:
+Given an array of size N,
+find the element that appears more than N/2 times.
+
+It is guaranteed that a majority element exists.
+
+Input:
+N
+Array
+
+Output:
+Majority element
+
+Time Complexity: O(N)
+Space Complexity: O(1)
+"""
+
+n = int(input())
+arr = list(map(int, input().split()))
+
+candidate = None
+count = 0
+
+for num in arr:
+    if count == 0:
+        candidate = num
+        count = 1
+    elif num == candidate:
+        count += 1
+    else:
+        count -= 1
+
+print(candidate)
