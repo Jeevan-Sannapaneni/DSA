@@ -1,0 +1,36 @@
+"""
+Problem 012: Two Sum
+
+Difficulty: Easy
+
+Problem Statement:
+Given an array of integers and a target value,
+find the indices of the two numbers such that
+they add up to the target.
+
+Input:
+N
+Array
+Target
+
+Output:
+Indices of the two numbers.
+
+Time Complexity: O(N)
+Space Complexity: O(N)
+"""
+
+n = int(input())
+arr = list(map(int, input().split()))
+target = int(input())
+
+seen = {}
+
+for i in range(n):
+    complement = target - arr[i]
+
+    if complement in seen:
+        print(seen[complement], i)
+        break
+
+    seen[arr[i]] = i
