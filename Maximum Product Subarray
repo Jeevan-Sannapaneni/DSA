@@ -1,0 +1,37 @@
+"""
+Problem 016: Maximum Product Subarray
+
+Difficulty: Medium
+
+Problem Statement:
+Given an integer array, find the contiguous subarray
+having the largest product.
+
+Input:
+N
+Array
+
+Output:
+Maximum product
+
+Time Complexity: O(N)
+Space Complexity: O(1)
+"""
+
+n = int(input())
+arr = list(map(int, input().split()))
+
+max_prod = arr[0]
+min_prod = arr[0]
+answer = arr[0]
+
+for i in range(1, n):
+    if arr[i] < 0:
+        max_prod, min_prod = min_prod, max_prod
+
+    max_prod = max(arr[i], max_prod * arr[i])
+    min_prod = min(arr[i], min_prod * arr[i])
+
+    answer = max(answer, max_prod)
+
+print(answer)
