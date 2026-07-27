@@ -1,0 +1,37 @@
+"""
+Problem 017: Contains Duplicate
+
+Difficulty: Easy
+
+Problem Statement:
+Given an integer array, determine whether
+it contains any duplicate elements.
+
+Input:
+N
+Array
+
+Output:
+YES if duplicate exists, otherwise NO.
+
+Time Complexity: O(N)
+Space Complexity: O(N)
+"""
+
+n = int(input())
+arr = list(map(int, input().split()))
+
+seen = set()
+
+duplicate = False
+
+for num in arr:
+    if num in seen:
+        duplicate = True
+        break
+    seen.add(num)
+
+if duplicate:
+    print("YES")
+else:
+    print("NO")
