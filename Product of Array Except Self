@@ -1,0 +1,39 @@
+"""
+Problem 015: Product of Array Except Self
+
+Difficulty: Medium
+
+Problem Statement:
+Given an integer array, return an array where each element
+is equal to the product of all the elements except itself.
+
+Do not use division.
+
+Input:
+N
+Array
+
+Output:
+Product array
+
+Time Complexity: O(N)
+Space Complexity: O(N)
+"""
+
+n = int(input())
+arr = list(map(int, input().split()))
+
+left = [1] * n
+right = [1] * n
+answer = [1] * n
+
+for i in range(1, n):
+    left[i] = left[i - 1] * arr[i - 1]
+
+for i in range(n - 2, -1, -1):
+    right[i] = right[i + 1] * arr[i + 1]
+
+for i in range(n):
+    answer[i] = left[i] * right[i]
+
+print(*answer)
